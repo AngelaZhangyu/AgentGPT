@@ -66,7 +66,7 @@ export const authOptions = (
       ? devOptions(commonOptions.adapter, req, res)
       : prodOptions;
 
-  return merge(commonOptions, options) as AuthOptions;
+  return merge(commonOptions, prodOptions) as AuthOptions;
 };
 
 /**

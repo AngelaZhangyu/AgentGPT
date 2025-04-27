@@ -1,5 +1,5 @@
 // @ts-check
-import {z} from "zod";
+import { z } from "zod";
 
 const requiredForProduction = () =>
     process.env.NODE_ENV === "production"
@@ -33,6 +33,10 @@ export const serverSchema = z.object({
     GITHUB_CLIENT_SECRET: z.string().min(1).trim().optional(),
     DISCORD_CLIENT_ID: z.string().min(1).trim().optional(),
     DISCORD_CLIENT_SECRET: z.string().min(1).trim().optional(),
+    MICROSOFT_CLIENT_ID: z.string().min(1).trim().optional(),
+    MICROSOFT_CLIENT_SECRET: z.string().min(1).trim().optional(),
+    MICROSOFT_TENANT_ID: z.string().min(1).trim().optional(),
+    MICROSOFT_AUTH_SCOPE: z.string().min(1).trim().optional(),
 });
 
 /**
@@ -53,6 +57,10 @@ export const serverEnv = {
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    MICROSOFT_CLIENT_ID: process.env.MICROSOFT_CLIENT_ID,
+    MICROSOFT_CLIENT_SECRET: process.env.MICROSOFT_CLIENT_SECRET,
+    MICROSOFT_TENANT_ID: process.env.MICROSOFT_TENANT_ID,
+    MICROSOFT_AUTH_SCOPE: process.env.MICROSOFT_AUTH_SCOPE,
 };
 
 /**

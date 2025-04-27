@@ -8,7 +8,7 @@ import type { ClientSafeProvider } from "next-auth/react";
 import { getProviders, signIn, useSession } from "next-auth/react";
 import type { LiteralUnion } from "next-auth/react/types";
 import React, { useState } from "react";
-import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaGoogle, FaMicrosoft } from "react-icons/fa";
 
 import FadeIn from "../components/motions/FadeIn";
 import GridLayout from "../layout/grid";
@@ -114,6 +114,11 @@ const providerButtonDetails: { [key: string]: ButtonDetail } = {
     icon: <FaGithub className="mr-2" />,
     color: "bg-gray-800 hover:bg-gray-900 text-white",
   },
+  "azure-ad": {
+    id: "azure-ad",
+    icon: <FaMicrosoft className="mr-2" />,
+    color: "bg-blue-600 hover:bg-blue-700 text-white",
+  }
 };
 
 const ProviderSignInButton = ({ detail }: { detail: ButtonDetail }) => {
@@ -124,7 +129,7 @@ const ProviderSignInButton = ({ detail }: { detail: ButtonDetail }) => {
       }}
       className={clsx(
         detail.color,
-        "mb-4 flex w-full items-center rounded-md px-10 py-3 text-base font-semibold shadow-md transition-colors duration-300 sm:px-16 sm:py-5 sm:text-xl"
+        "mb-4 flex w-full items-center rounded-md px-10 py-3 text-base font-semibold shadow-md transition-colors duration-300"
       )}
     >
       {detail.icon}
